@@ -54,7 +54,7 @@ function Generate(result)
         
         
         
-        function CreateCustomer()
+        function CreateCategory()
 {
     var objRequest = new XMLHttpRequest();
     var url = "http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/CreateCategory";
@@ -98,7 +98,7 @@ function OperationResult(output)
 
 
 
-function  updateOrderAddress()
+function  updateDescription()
 {
     var objRequest = new XMLHttpRequest();
     var url = "http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/updateCatDescription";
@@ -138,28 +138,27 @@ function OperationResult_2(output)
 
 
 
-
-function deleteCustomer()
+function deleteCategory()
 {
-    //var objRequest = new XMLHttpRequest();
+    var objRequest = new XMLHttpRequest();
     var url = "http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/deleteCategory";
-    //url += document.getElementById("CID").value;
+    url += document.getElementById("CID").value;
     var customerid = document.getElementById("custidee").value;
         
-    var byecustomer = '{"CID":' + customerid + '}';
+    var byecategory = '{"CID":' + customerid + '}';
     
     objRequest.onreadystatechange = function()
     {
         if (objRequest.readyState == 4 && objRequest.status == 200)
         {
-            var output = JSON.parse(objRequest.responseText);
-            GenerateOutput(output);
+           var output = JSON.parse(objRequest.responseText);
+            OperationResult_3(output);
             
         }
     }
     
     objRequest.open("GET",url,true);
-    getRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    //getRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     objRequest.send();
 }
 
@@ -266,6 +265,8 @@ function MenuChoice()
         document.getElementById("section3").style.visibility = "hidden";
         document.getElementById("section4").style.display = "none";
         document.getElementById("section4").style.visibility = "hidden";
+        document.getElementById("section5").style.display = "none";
+        document.getElementById("section5").style.visibility = "hidden";
     }
     else if (document.getElementById("menu").value == "Update Description")
     {
@@ -277,6 +278,8 @@ function MenuChoice()
         document.getElementById("section3").style.visibility = "visible";
         document.getElementById("section4").style.display = "none";
         document.getElementById("section4").style.visibility = "hidden";
+        document.getElementById("section5").style.display = "none";
+        document.getElementById("section5").style.visibility = "hidden";
         
     }
     else if (document.getElementById("menu").value == "Delete a Category")
@@ -288,13 +291,31 @@ function MenuChoice()
         document.getElementById("section3").style.display = "none";
         document.getElementById("section3").style.visibility = "hidden";
         document.getElementById("section4").style.display = "inline";
-        document.getElementById("section4").style.visibility = "visible"; 
+        document.getElementById("section4").style.visibility = "visible";
+        document.getElementById("section5").style.display = "none";
+        document.getElementById("section5").style.visibility = "hidden";
     }
+    
+    else if (document.getElementById("menu").value == "About")
+    {
+       document.getElementById("section1").style.display = "none";
+        document.getElementById("section1").style.visibility = "hidden";
+        document.getElementById("section2").style.display = "none";
+        document.getElementById("section2").style.visibility = "hidden";
+        document.getElementById("section3").style.display = "none";
+        document.getElementById("section3").style.visibility = "hidden";
+        document.getElementById("section4").style.display = "none";
+        document.getElementById("section4").style.visibility = "hidden";
+        document.getElementById("section5").style.display = "inline";
+        document.getElementById("section5").style.visibility = "visible";
+    }
+    
     else
     {
         document.getElementById("section1").style.visibility = "hidden";
         document.getElementById("section2").style.visibility = "hidden";
         document.getElementById("section3").style.visibility = "hidden";
         document.getElementById("section4").style.visibility = "hidden";
+        document.getElementById("section5").style.visibility = "hidden";
     }
 }
