@@ -31,7 +31,7 @@ function Generate(result)
     var count = 0;
     var display = "";
     
-        display += ("<center>" + "<table border = '2' style = 'color: blue;'>");
+        display += ("<center>" + "<table border = '2' style = 'color: #33CC33;'>");
         
         display += ('<th>' + 'CID' + '<th>' + 'CName' + '<th>' + 'CDescription' + '<th>');
         
@@ -253,6 +253,8 @@ function MenuChoice()
         document.getElementById("section3").style.visibility = "hidden";
         document.getElementById("section4").style.display = "none";
         document.getElementById("section4").style.visibility = "hidden";
+        document.getElementById("section5").style.display = "none";
+        document.getElementById("section5").style.visibility = "hidden";
     }
     
     else if (document.getElementById("menu").value == "Add New Category")

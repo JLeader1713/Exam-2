@@ -1,20 +1,27 @@
+h1{
+    font-size: 40px;
+    color: #33CC33;
+}
+body{
+    background-color: black;
+}
 section.section1 {display: inline;
                   display: none;   
                  }
 
-section.section2 {background-color: #FFFFCC; display: inline;
+section.section2 {color: white; display: inline;
                   display: none;
                  }
 
-section.section3 {background-color: #DCDCDC; display: inline;
+section.section3 {color: white; display: inline;
                   display: none;
                  }
 
-section.section4 {background-color: #DCDCDC; display: inline;
+section.section4 {color: white; display: inline;
                   display: none;
                  }
                  
-section.section5 {background-color: #DCDCDC; display: inline;
+section.section5 {color: white; display: inline;
                   display: none;
                  }
                  
