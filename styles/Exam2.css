@@ -5,7 +5,7 @@ h1{
 body{
     background-color: black;
 }
-section.section1 {display: inline;
+section.section1 {font-size: 14px; display: inline;
                   display: none;   
                  }
 
